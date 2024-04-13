@@ -33,11 +33,11 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                       <label>Name</label>
-                      <input type="text" class="form-control" value="{{ Auth::user()->name }}" name="name" required="">
+                      <input type="text" class="form-control" value="{{ Auth::user()->name }}" name="name">
                     </div>
                     <div class="form-group col-md-6 col-12">
                       <label>Email</label>
-                      <input type="text" class="form-control" value="{{ Auth::user()->email }}" name="email" required="">
+                      <input type="text" class="form-control" value="{{ Auth::user()->email }}" name="email">
                     </div>
                   </div>
               </div>
@@ -49,11 +49,7 @@
         </div>
 
         <div class="col-12 col-md-12 col-lg-8">
-        @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                <span class="alert alert-danger">{{ $error }}</span>
-            @endforeach
-        @endif
+        
           <div class="card">
             <form method="post" class="needs-validation" action="{{route('admin.password.update')}}">
               @csrf
